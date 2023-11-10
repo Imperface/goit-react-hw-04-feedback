@@ -1,15 +1,16 @@
 import css from './Feedback.module.css';
-import { FeedbackButton, dataButtonKey } from 'components';
-const Feedback = ({ addFeedback }) => {
-  const arrayFeedbackStatus = Object.keys(dataButtonKey());
-  return (
-    <ul className={css.buttonsList}>
-      {arrayFeedbackStatus.map(item => (
-        <li key={item}>
-          <FeedbackButton text={item} addFeedback={addFeedback} />
-        </li>
-      ))}
-    </ul>
-  );
-};
-export default Feedback;
+import { FeedbackButton } from 'components';
+
+export const Feedback = ({ onFeedbackClick }) => (
+  <ul className={css.buttonsList} onClick={onFeedbackClick}>
+    <li>
+      <FeedbackButton text="Good" type="button" />
+    </li>
+    <li>
+      <FeedbackButton text="Neutral" type="button" />
+    </li>
+    <li>
+      <FeedbackButton text="Bad" type="button" />
+    </li>
+  </ul>
+);

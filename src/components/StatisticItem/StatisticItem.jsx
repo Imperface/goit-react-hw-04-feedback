@@ -1,9 +1,7 @@
-const StatisticItem = ({ itemKey, itemValue }) => {
-  // console.log(itemKey);
-  return (
+export const StatisticItem = ({ itemName, itemValue }) => (
+  <li>
     <p>
-      {itemKey}: {itemValue}
+      {itemName}: {itemValue ?? 0}
     </p>
-  );
-};
-export default StatisticItem;
+  </li>
+);

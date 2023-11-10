@@ -1,13 +1,7 @@
 import css from './FeedbackButton.module.css';
-const FeedbackButton = ({ text, addFeedback }) => {
-  return (
-    <>
-      {text && (
-        <button className={css.button} onClick={() => addFeedback(text)}>
-          {text}
-        </button>
-      )}
-    </>
-  );
-};
-export default FeedbackButton;
+
+export const FeedbackButton = ({ text, type }) => (
+  <button className={css.button} type={type} mark={text}>
+    {text}
+  </button>
+);
